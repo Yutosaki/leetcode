@@ -3,6 +3,10 @@ package main
 import "fmt"
 
 func rotate(nums []int, k int) {
+	k = k % len(nums)
+	if k == 0 {
+		return
+	}
 	tmp := nums[len(nums)-k:]
 	nums = nums[:len(nums)-k]
 	tmp = append(tmp, nums...)
